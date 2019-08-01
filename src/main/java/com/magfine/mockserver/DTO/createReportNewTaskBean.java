@@ -24,46 +24,6 @@ public class createReportNewTaskBean
 		this.subType = subType;
 	}
 
-	public String getName()
-	{
-		return name;
-	}
-
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-
-	public String getIDType()
-	{
-		return IDType;
-	}
-
-	public void setIDType(String IDType)
-	{
-		this.IDType = IDType;
-	}
-
-	public String getUserID()
-	{
-		return userID;
-	}
-
-	public void setUserID(String userID)
-	{
-		this.userID = userID;
-	}
-
-	public String getPhoneNo()
-	{
-		return phoneNo;
-	}
-
-	public void setPhoneNo(String phoneNo)
-	{
-		this.phoneNo = phoneNo;
-	}
-
 	public String getCallback()
 	{
 		return callback;
@@ -75,14 +35,6 @@ public class createReportNewTaskBean
 	}
 
 	private String subType;
-
-	private String name;
-
-	private String IDType;
-
-	private String userID;
-
-	private String phoneNo;
 
 	private String callback;
 
@@ -98,16 +50,26 @@ public class createReportNewTaskBean
 		this.account = account;
 	}
 
-	public String getPaswword()
+	public String getPassword()
 	{
-		return paswword;
+		return password;
 	}
 
-	public void setPaswword(String paswword)
+	public void setPassword(String password)
 	{
-		this.paswword = paswword;
+		this.password = password;
 	}
 
-	private String paswword;
+	private String password;
 
+	@Override
+	public String toString(){
+		return "createReportNewTaskBean{"+
+				"account="+getAccount()+","+
+				"password="+getPassword()+","+
+				"type="+getType()+","+
+				"subtype="+getType()+","+
+				"callback="+getCallback()+"}";
+	}
+	
 }

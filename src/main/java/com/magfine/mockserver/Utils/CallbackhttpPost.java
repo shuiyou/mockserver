@@ -1,12 +1,12 @@
 package com.magfine.mockserver.Utils;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
+
+import java.util.Map;
 
 import static com.magfine.mockserver.Utils.Common.getTxt;
 
@@ -30,7 +30,10 @@ public class CallbackhttpPost
 
 	public static void main(String args[]){
 		try{
-			CallbackhttpPost.postCallbackurl(CallbackhttpPost.url,getTxt( "CallbackParm.txt" ));
+			String txt = getTxt("CallbackParm.txt");
+			Map convert = JSONUtil.convert(txt, Map.class);
+		 	convert.put("tid", "");
+			CallbackhttpPost.postCallbackurl(CallbackhttpPost.url,JSONUtil.toJson(convert));
 
 		}catch (Exception e){
 			e.printStackTrace();

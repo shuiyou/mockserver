@@ -1,5 +1,6 @@
 package com.magfine.mockserver.DTO;
 
+
 public class ResultDTO {
 	private String tid;
 
@@ -97,5 +98,17 @@ public class ResultDTO {
 	}
 
 	private String need;
+
+	@Override
+	public String toString(){
+		return "ResultDto{"+
+				"tid="+getTid()+","+
+				"type="+getType()+","+
+				"subtype="+getSubType()+","+
+				"phase="+getPhase()+","+
+				"failcode="+getFailCode()+","+
+				"reason="+getReason()+","+
+				"need="+getNeed()+"}";
+	}
 
 }
